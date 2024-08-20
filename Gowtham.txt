@@ -1,0 +1,125 @@
+Method 1
+
+ class Exam1 
+{
+ public static void main(String[] args) 
+  {
+    printArmstrongNumbers();
+  }
+
+    public static void printArmstrongNumbers() 
+     {
+        for (int num = 1; num <= 100; num++) 
+          {
+            int sum = 0, count = 0, temp = num;
+            for (int n = temp; n > 0; n /= 10)
+            {
+                count++;
+            }
+            for (int n = temp; n > 0; n /= 10) 
+            {
+                int rem = n % 10;
+                sum += Math.pow(rem, count);
+            }
+            if (temp == sum) 
+            {
+                System.out.println(temp + " is an Armstrong number");
+            }
+        }
+    }
+}
+output:
+1 is an Armstrong number
+2 is an Armstrong number
+3 is an Armstrong number
+4 is an Armstrong number
+5 is an Armstrong number
+6 is an Armstrong number
+7 is an Armstrong number
+8 is an Armstrong number
+9 is an Armstrong number
+------------------------------------------------------------------
+Method 2
+
+class Exam2
+{
+    public static int currentNumber = 1;
+    public static void main(String[] args) 
+      {
+        System.out.println("Armstrong numbers between 1 and 100 are:");
+        for (currentNumber = 1; currentNumber <= 100; currentNumber++)
+        {
+            if (isArmstrong()) 
+            {
+                System.out.println(currentNumber + " is an Armstrong number");
+            }
+        }
+     }
+    public static boolean isArmstrong() {
+        int sum = 0, count = 0, temp = currentNumber;
+
+        for (int n = temp; n > 0; n /= 10) {
+            count++;
+        }
+        for (int n = temp; n > 0; n /= 10) {
+            int rem = n % 10;
+            sum += Math.pow(rem, count);
+        }
+        return temp == sum;
+    }
+}
+output:
+Armstrong numbers between 1 and 100 are:
+1 is an Armstrong number
+2 is an Armstrong number
+3 is an Armstrong number
+4 is an Armstrong number
+5 is an Armstrong number
+6 is an Armstrong number
+7 is an Armstrong number
+8 is an Armstrong number
+9 is an Armstrong number
+-----------------------------------------------------------------
+Method3
+
+class Exam3
+{
+ public static void main(String[] args) 
+  {
+   System.out.println("Armstrong numbers between 1 and 100 are:");
+   for (int num = 1; num <= 100; num++) 
+       {
+            if (isArmstrong(num)) 
+            {
+                System.out.println(num + " is an Armstrong number");
+            }
+        }
+    }
+    public static boolean isArmstrong(int num) 
+      {
+        int sum = 0, count = 0, temp = num;
+        for (int n = temp; n > 0; n /= 10)
+        {
+            count++;
+        }
+        for (int n = temp; n > 0; n /= 10) 
+        {
+            int rem = n % 10;
+            sum += Math.pow(rem, count);
+        }
+        return temp == sum;
+    }
+}
+output:
+Armstrong numbers between 1 and 100 are:
+1 is an Armstrong number
+2 is an Armstrong number
+3 is an Armstrong number
+4 is an Armstrong number
+5 is an Armstrong number
+6 is an Armstrong number
+7 is an Armstrong number
+8 is an Armstrong number
+9 is an Armstrong number
+
+
